@@ -1,0 +1,6 @@
+.board {
+    display:grid;
+    border: solid 1px gray;
+    height: 320px;
+    width: 320px;
+}
