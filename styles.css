@@ -1,8 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footers {
+    margin-top:50px;
+}
+
+.footers img {
+    max-width:30px;
+    max-width: 16px;
+    margin-right: 4px;
+}
+
+.footers a{
+    text-decoration: none;
+}
+
+.title{
+    text-align: center;
+}
+
 .board {
-    display:grid;
+    display: grid;
     border: solid 1px gray;
     height: 70vh;
     width: 70vh;
     max-height: 420px;
     max-width: 420px;
+    margin:8px;
 }
+
+.buttons{text-align:center;}
+
+.buttons button, .resize button {
+    display: inline-block;
+    margin: 4px;
+    padding: 0.75rem 1rem;
+    border: 0;
+    border-radius: 0.317rem;
+    background-color: #e98724;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-family:'Quicksand', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.buttons button:hover {
+    opacity: 0.85;
+}
+
+button.Black {
+    background-color:black;
+}
+
+button.Rainbow {
+    background: linear-gradient(90deg,
+            hsl(0, 100%, 50%),
+            hsl(30, 100%, 50%),
+            hsl(60, 100%, 50%),
+            hsl(90, 100%, 50%),
+            hsl(120, 100%, 50%),
+            hsl(150, 100%, 50%),
+            hsl(180, 100%, 50%),
+            hsl(210, 100%, 50%),
+            hsl(240, 100%, 50%),
+            hsl(270, 100%, 50%),
+            hsl(300, 100%, 50%),
+            hsl(330, 100%, 50%),
+            hsl(360, 100%, 50%));
+    -webkit-text-stroke: 0.05px pink;
+    color:white
+}
+
+.resize {text-align:center;}
+.resize_err {font-size:smaller}

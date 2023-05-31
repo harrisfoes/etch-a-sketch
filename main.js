@@ -41,18 +41,19 @@ function removeOldBoard(lastBoardCellNumber){
 }
 
 function resizeGrid(num){
-    console.log(num);
+    
+    let err = document.querySelector(".resize_err");
+
     if(num < 1 || num > 100){
-        let err = document.querySelector(".resize_err")
         err.style.display = "block";
         err.innerHTML = "Please enter a valid number not greater than 100."
     }
     else{
         removeOldBoard(lastBoardCellNumber);
         createBoard(num);
+        err.style.display = "none";
     }
 }
-
 
 function changeColor(){   
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
