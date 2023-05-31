@@ -13,17 +13,17 @@
 
 <body>
     <div class="main">
-        <div class="title">Sketch an Etch</div>
+        <div class="title"><h2>Sketch an Etch</h2></div>
         <div class="board"></div>
     </div>
     <div class="buttons">
-        <button id="black">Black</button>
-        <button class="Rainbow">Rainbow</button>
-        <button class="Reset">Reset</button>
+        <button class="Black" onClick="backInBlack()">Black</button>
+        <button class="Rainbow" onClick="rainbowOn()">Rainbow</button>
+        <button class="Reset" onClick="resetBoard()">Reset</button>
     </div>
     <div class="resize">
         <input type="text" class="resizenum" id="rn" size="2">
-        <button class="resizebtn" onClick="resetGrid(document.getElementById('rn').value)" >Resize</button>
+        <button class="resizebtn" onClick="resizeGrid(document.getElementById('rn').value)" >Resize</button>
         <error class="resize_err"></error>
     </div>
 

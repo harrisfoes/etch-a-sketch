@@ -1,6 +1,8 @@
 .board {
     display:grid;
     border: solid 1px gray;
-    height: 320px;
-    width: 320px;
+    height: 70vh;
+    width: 70vh;
+    max-height: 420px;
+    max-width: 420px;
 }

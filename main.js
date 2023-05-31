@@ -1,7 +1,8 @@
 let lastBoardCellNumber = 16
+let chosenColor = "black";
+let rainbowMode = false;
 
 function createBoard(boardcells) {
-    let boardsize = 320;
     let board = document.querySelector('.board');
 
     board.style.gridTemplateColumns = `repeat(${boardcells} , 1fr)`;
@@ -9,14 +10,21 @@ function createBoard(boardcells) {
 
     for (i = 0; i < (boardcells * boardcells); i++) {
         let square = document.createElement("div");
-        let gridsize = boardcells / boardsize
 
         square.classList.add("boardcell");
         square.setAttribute('id', `${i}_cell`);
         square.style.border = "solid 1px black";
-        square.style.width = gridsize;
-        square.style.height = gridsize;
+
         board.appendChild(square);
+
+        square.addEventListener('mouseover', (event) => {
+
+            if(rainbowMode)
+                changeColor();
+
+            event.target.style.backgroundColor = chosenColor;
+
+        });
     }
 
     lastBoardCellNumber = boardcells;
@@ -32,9 +40,9 @@ function removeOldBoard(lastBoardCellNumber){
 
 }
 
-function resetGrid(num){
+function resizeGrid(num){
     console.log(num);
-    if(num < 2 || num > 100){
+    if(num < 1 || num > 100){
         let err = document.querySelector(".resize_err")
         err.style.display = "block";
         err.innerHTML = "Please enter a valid number not greater than 100."
@@ -43,6 +51,27 @@ function resetGrid(num){
         removeOldBoard(lastBoardCellNumber);
         createBoard(num);
     }
+}
+
+
+function changeColor(){   
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    chosenColor = "#" + randomColor;
+}
+
+function rainbowOn(){
+    rainbowMode = true;
+}
+
+function backInBlack(){
+    chosenColor = "black";
+    rainbowMode = false;
+}
+
+function resetBoard(){
+    backInBlack();
+    removeOldBoard(lastBoardCellNumber);
+    createBoard(lastBoardCellNumber);
 }
 
 createBoard(16);
